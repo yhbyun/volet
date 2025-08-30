@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('status')->default('new'); // new, read, resolve
             $table->string('category');
             $table->json('user_info')->nullable();
+            $table->json('screenshots')->nullable();
             $table->timestamps();
 
             $table->index('category');
