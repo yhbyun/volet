@@ -2,6 +2,7 @@
 
 namespace Mydnic\Volet\Models;
 
+use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Database\Eloquent\Model;
 use Mydnic\Volet\Features\FeatureManager;
 
@@ -12,10 +13,12 @@ class FeedbackMessage extends Model
         'category',
         'status',
         'user_info',
+        'screenshots',
     ];
 
     protected $casts = [
         'user_info' => 'array',
+        'screenshots' => 'array'
     ];
 
     public function __construct(array $attributes = [])
@@ -45,6 +48,11 @@ class FeedbackMessage extends Model
                 $model->status = 'new';
             }
         });
+    }
+
+    protected function asJson($value, $flags = 0)
+    {
+        return Json::encode($value, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     }
 
     /**

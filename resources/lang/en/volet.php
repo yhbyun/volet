@@ -67,5 +67,12 @@ return [
         'success-subtitle' => 'We appreciate your input and will review it shortly.',
         'send-another' => 'Send another feedback',
         'error' => 'Failed to submit feedback',
+        'capturing' => 'Capturing...',
+        'capture-screen' => 'Capture Screen',
+        'upload-image' => 'Upload Image',
+        'screenshot-hint' => 'You can also paste screenshots with Ctrl+V',
+        'error-capture-not-supported' => 'Screen capture is not supported in this browser',
+        'error-capture-failure' => 'Failed to capture screen. Please try again.',
+        'max-screenshots' => '4 screenshots allowed',
     ],
 ];
