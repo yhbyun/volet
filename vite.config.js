@@ -9,13 +9,11 @@ export default defineConfig({
     build: {
         outDir: 'resources/dist',
         rollupOptions: {
-            input: {
-                'volet-app': resolve(__dirname, 'resources/js/volet.js'),
-                'volet-default': resolve(__dirname, 'resources/css/volet.css')
-            },
+            input: resolve(__dirname, 'resources/js/volet.js'), // JS만 빌드
             output: {
-                entryFileNames: '[name].js',
-                assetFileNames: '[name][extname]'
+                entryFileNames: 'volet-app.js',
+                format: 'iife',
+                name: 'VoletApp',
             }
         }
     }

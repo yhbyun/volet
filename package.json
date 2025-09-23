@@ -1,13 +1,15 @@
 {
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.1",
-    "vite": "^6.3.4",
-    "vue": "^3.4.0"
-  }
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build:js": "vite build",
+        "build:css": "vite build --config vite.css.config.js",
+        "build": "npm run build:js && npm run build:css && cp resources/dist-tmp/volet-default.css resources/dist/volet-default.css"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.2.1",
+        "vite": "^6.3.4",
+        "vue": "^3.4.0"
+    }
 }
